@@ -1,5 +1,5 @@
 function App() {
-  return <div>Rob is der Geilste!</div>;
+  return <div>This is laBoum</div>
 }
 
-export default App;
+export default App
