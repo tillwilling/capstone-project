@@ -2,29 +2,21 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
 Location.propTypes = {
-  locations: PropTypes.arrayOf(
-    PropTypes.shape({ image: PropTypes.node, text: PropTypes.string })
-  ),
+  name: PropTypes.string,
+  image: PropTypes.string,
+  id: PropTypes.number,
 }
 
-export default function Location({ image, text }) {
+export default function Location({ image, name, id }) {
   return (
-    <ListWrapper>
-      <li>
-        <Image src={image} alt=""></Image>
-        <ImageText>{text}</ImageText>
-      </li>
-    </ListWrapper>
+    <LocationCard id={id}>
+      <img src={image} alt="" />
+      <span>{name}</span>
+    </LocationCard>
   )
 }
 
-const Image = styled.img`
-  max-width: 300px;
-  border-radius: 8px 8px 0 0;
-`
-
-const ListWrapper = styled.ul`
-  list-style-type: none;
+const LocationCard = styled.section`
   max-width: 300px;
   padding: 0 0 10px 0;
   border-radius: 8px;
@@ -32,16 +24,16 @@ const ListWrapper = styled.ul`
   display: grid;
   gap: 20px;
 
-  li {
-    display: grid;
-    align-items: center;
+  img {
+    max-width: 300px;
+    border-radius: 8px 8px 0 0;
   }
-`
 
-const ImageText = styled.span`
-  width: 100%;
-  text-align: left;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  span {
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 `
