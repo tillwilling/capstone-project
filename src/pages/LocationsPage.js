@@ -14,7 +14,7 @@ LocationList.propTypes = {
 
 export default function LocationList({ locations }) {
   return (
-    <PageWrapper>
+    <LocationWrapper>
       {data.map(({ id, name, description, image }) => (
         <Location
           key={id}
@@ -23,11 +23,11 @@ export default function LocationList({ locations }) {
           image={image}
         />
       ))}
-    </PageWrapper>
+    </LocationWrapper>
   )
 }
 
-const PageWrapper = styled.section`
+const LocationWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
