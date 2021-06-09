@@ -18,7 +18,6 @@ export default function Location({ image, name, id }) {
 
 const LocationCard = styled.section`
   max-width: 300px;
-  padding: 0 0 10px 0;
   border-radius: 8px;
   box-shadow: 0 6px 10px #0006;
   display: grid;
@@ -30,10 +29,8 @@ const LocationCard = styled.section`
   }
 
   span {
+    padding: 10px 0 10px 10px;
     width: 100%;
     text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 `
