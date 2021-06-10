@@ -9,7 +9,7 @@
   },
 
   {
-    "name": "Großer Garten mit Tischen",
+    "name": "Garten mit Tischen",
     "image": "https://images.unsplash.com/photo-1425421598808-4a22ce59cc97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
     "description": "Großer Garten mit Tischen",
     "zipcode": "12345",
@@ -18,32 +18,32 @@
   },
 
   {
-    "name": "Großer Garten mit Scheune",
-    "image": "https://images.unsplash.com/photo-1541020230467-e33e4f96f7fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "name": "Großer Garten mit Schaukel",
+    "image": "https://images.unsplash.com/photo-1427477321886-abc24e8ce923?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
     "description": "Großer Garten mit Scheune",
     "zipcode": "12345",
     "city": "Hamburg",
     "id": 3
   },
   {
-    "name": "Großer Garten mit Scheune",
-    "image": "https://images.unsplash.com/photo-1541020230467-e33e4f96f7fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "name": "Wiese mit Kapelle",
+    "image": "https://images.unsplash.com/photo-1524479967500-c3a0bf56d080?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
     "description": "Großer Garten mit Scheune",
     "zipcode": "12345",
     "city": "Hamburg",
     "id": 4
   },
   {
-    "name": "Großer Garten mit Scheune",
-    "image": "https://images.unsplash.com/photo-1541020230467-e33e4f96f7fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "name": "Partyraum",
+    "image": "https://images.unsplash.com/photo-1576419840119-bddd76d62bbc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
     "description": "Großer Garten mit Scheune",
     "zipcode": "12345",
     "city": "Hamburg",
     "id": 5
   },
   {
-    "name": "Großer Garten mit Scheune",
-    "image": "https://images.unsplash.com/photo-1541020230467-e33e4f96f7fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "name": "Untergrund Partyraum",
+    "image": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80",
     "description": "Großer Garten mit Scheune",
     "zipcode": "12345",
     "city": "Hamburg",

@@ -11,7 +11,7 @@ export default function Location({ image, name, id }) {
   return (
     <LocationCard id={id}>
       <img src={image} alt="" />
-      <span>{name}</span>
+      <p>{name}</p>
     </LocationCard>
   )
 }
@@ -28,8 +28,8 @@ const LocationCard = styled.section`
     border-radius: 8px 8px 0 0;
   }
 
-  span {
-    padding: 10px 0 10px 10px;
+  p {
+    padding: 0 10px 10px 10px;
     width: 100%;
     text-align: left;
   }

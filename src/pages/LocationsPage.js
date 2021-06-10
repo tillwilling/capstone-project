@@ -3,16 +3,16 @@ import PropTypes from 'prop-types'
 import Location from '../components/Location'
 import data from '../data.json'
 
-LocationList.propTypes = {
+/*LocationList.propTypes = {
   locations: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.string,
       description: PropTypes.string,
     })
   ),
-}
+}*/
 
-export default function LocationList({ locations }) {
+export default function LocationList() {
   return (
     <LocationWrapper>
       {data.map(({ id, name, description, image }) => (
