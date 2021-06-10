@@ -4,8 +4,9 @@
 
     describe('Location', () => {
         it('renders', () => {
-            render(<Location />)
-            expect(screen.getByText('Location')).toBeInTheDocument()
+            render(<Location image=”/some/path" text="some text" />)
+            expect(screen.getByText('some text')).toBeInTheDocument()
+            .... check for img ...
         })
     })
     
