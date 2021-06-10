@@ -1,16 +1,6 @@
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
 import Location from '../components/Location'
 import data from '../data.json'
-
-/*LocationList.propTypes = {
-  locations: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.string,
-      description: PropTypes.string,
-    })
-  ),
-}*/
 
 export default function LocationList() {
   return (
@@ -31,7 +21,7 @@ const LocationWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   gap: 20px;
   padding: 20px;
 `

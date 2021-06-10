@@ -19,8 +19,8 @@ describe('LocationsPage', () => {
     )
 
     const description = screen.getAllByText('Garten')
-    expect(description).toHaveLength()
+    expect(description).toBeInTheDocument()
     const image = screen.getAllByRole('img')
-    expect(image).toHaveLength()
+    expect(image).toBeInTheDocument()
   })
 })

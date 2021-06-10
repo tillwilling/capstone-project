@@ -9,7 +9,7 @@ Location.propTypes = {
 
 export default function Location({ image, name, id }) {
   return (
-    <LocationCard id={id}>
+    <LocationCard>
       <img src={image} alt="" />
       <p>{name}</p>
     </LocationCard>
