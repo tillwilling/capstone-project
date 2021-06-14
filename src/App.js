@@ -1,19 +1,17 @@
-import styled from 'styled-components/macro'
-import locations from './data.json'
-import LocationsPage from './pages/LocationsPage'
+import { useState } from 'react'
+import AddGamePage from './pages/AddGamePage'
 
 function App() {
+  const [games, setGames] = useState([])
   return (
-    <AppWrapper>
-      <LocationsPage locations={locations} />
-    </AppWrapper>
+    <div>
+      <AddGamePage games={games} onSubmit={handleGamename} />
+    </div>
   )
+
+  function handleGamename(name) {
+    setGames([...games, name])
+  }
 }
 
 export default App
-
-const AppWrapper = styled.div`
-  background-color: #f6f6eb;
-  height: 100vh;
-  width: 100vw;
-`
