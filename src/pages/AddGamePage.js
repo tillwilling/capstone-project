@@ -7,15 +7,20 @@ export default function AddGamePage({ onSubmit, games }) {
       <Form onSubmit={handleSubmit}>
         <Label>
           Enter game name:
-          <input name="gamename" type="text" required />
+          <input
+            name="gamename"
+            type="text"
+            required
+            placeholder="e.g. Apex Legends"
+          />
         </Label>
+        <List>
+          {games.map(name => (
+            <li>{name}</li>
+          ))}
+        </List>
         <Button>Add game</Button>
       </Form>
-      <List>
-        {games.map(name => (
-          <li>{name}</li>
-        ))}
-      </List>
     </Container>
   )
 
@@ -34,15 +39,44 @@ const Form = styled.form`
   display: grid;
   justify-items: center;
   gap: 20px;
+
+  Label {
+    display: grid;
+    padding: 40px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #c3073f;
+  }
+
+  input {
+    padding: 10px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: whitesmoke;
+  }
+
+  input::placeholder {
+    opacity: 0.5;
+  }
 `
 
 const List = styled.ul`
   display: grid;
-  gap: 20px;
+  justify-items: center;
   padding: 0;
   list-style: none;
+  gap: 20px;
+  font-size: 1.8rem;
+
+  li {
+    padding: 20px;
+    border-radius: 8px;
+    color: whitesmoke;
+    width: 300px;
+    text-align: center;
+    border: ridge whitesmoke;
+    background-color: #4056a1;
+  }
 `
 
-const Label = styled.label`
-  display: grid;
-`
+const Label = styled.label``
