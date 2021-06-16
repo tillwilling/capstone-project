@@ -1,6 +1,8 @@
 import styled from 'styled-components/macro'
 import Button from '../components/Button'
 
+//const api_key = process.env.REACT_APP_API_KEY;
+
 export default function AddGamePage({ onSubmit, games }) {
   return (
     <Container>
@@ -26,8 +28,10 @@ export default function AddGamePage({ onSubmit, games }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    const { gamename } = event.target.elements
+    const form = event.target
+    const { gamename } = form.elements
     onSubmit(gamename.value)
+    form.reset()
   }
 }
 

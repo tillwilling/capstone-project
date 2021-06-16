@@ -4,6 +4,8 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import GlobalStyles from './GlobalStyles'
 
+//require('dotenv').config()
+
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />

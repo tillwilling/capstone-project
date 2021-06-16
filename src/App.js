@@ -9,8 +9,8 @@ function App() {
     </div>
   )
 
-  function handleGamename(name) {
-    setGames([...games, name])
+  function handleGamename(newGame) {
+    setGames([...games, newGame])
   }
 }
 
