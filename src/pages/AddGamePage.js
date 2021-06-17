@@ -16,12 +16,12 @@ export default function AddGamePage({ onSubmit, games }) {
             placeholder="e.g. Apex Legends"
           />
         </Label>
+        <Button>Add game</Button>
         <List>
           {games.map(name => (
             <li>{name}</li>
           ))}
         </List>
-        <Button>Add game</Button>
       </Form>
     </Container>
   )
