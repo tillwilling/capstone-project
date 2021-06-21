@@ -10,9 +10,7 @@ export default function Search({ onSubmit }) {
   const [selectedOption, setSelectedOption] = useState(null)
   useEffect(() => {
     setSelectedOption(null)
-    fetch(
-      `https://api.rawg.io/api/games?key=ee5514dd562841628542ee38194371a5&search=${query}`
-    )
+    fetch(`https://api.rawg.io/api/games?key=${API_KEY}&search=${query}`)
       .then(res => res.json())
       .then(data => setOptions(data.results))
   }, [query])
