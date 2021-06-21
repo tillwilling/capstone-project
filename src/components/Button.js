@@ -9,6 +9,9 @@ const Button = styled.button`
   color: #1a1a1d;
   font-weight: bold;
   font-size: 1.5rem;
+  bottom: 10px;
+  position: fixed;
+  margin: auto;
 `
 
 export default Button

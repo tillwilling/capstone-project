@@ -1,66 +1,35 @@
 import styled from 'styled-components/macro'
-import Button from '../components/Button'
+import Search from '../components/Search'
 
 //const api_key = process.env.REACT_APP_API_KEY;
 
 export default function AddGamePage({ onSubmit, games }) {
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
-        <Label>
-          Enter game name:
-          <input
-            name="gamename"
-            type="text"
-            required
-            placeholder="e.g. Apex Legends"
-          />
-        </Label>
-        <Button>Add game</Button>
-        <List>
-          {games.map(name => (
-            <li>{name}</li>
-          ))}
-        </List>
-      </Form>
+      <Search onSubmit={onSubmit} />
+      <List>
+        {games.map(name => (
+          <li>{name}</li>
+        ))}
+      </List>
     </Container>
   )
-
-  function handleSubmit(event) {
-    event.preventDefault()
-    const form = event.target
-    const { gamename } = form.elements
-    onSubmit(gamename.value)
-    form.reset()
-  }
 }
 
 const Container = styled.section`
   display: grid;
-`
-
-const Form = styled.form`
-  display: grid;
   justify-items: center;
-  gap: 20px;
 
-  Label {
-    display: grid;
-    padding: 40px;
-    font-size: 1.4rem;
-    line-height: 1.4;
-    color: #c3073f;
-  }
-
-  input {
-    padding: 10px;
+  Button {
     border-radius: 8px;
     border-style: none;
-    background-color: whitesmoke;
-  }
-
-  input::placeholder {
-    opacity: 0.5;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    background-color: #c3073f;
+    color: #1a1a1d;
+    font-weight: bold;
+    font-size: 1.5rem;
   }
 `
 
@@ -82,5 +51,3 @@ const List = styled.ul`
     background-color: #4056a1;
   }
 `
-
-const Label = styled.label``
