@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import Button from './Button'
 
-//const API_KEY = process.env.REACT_APP_API_KEY;
+//require('dotenv').config()
+const API_KEY = process.env.REACT_APP_API_KEY
 
 export default function Search({ onSubmit }) {
   const [options, setOptions] = useState([])
@@ -20,7 +21,7 @@ export default function Search({ onSubmit }) {
         <label>
           Selected Game: {selectedOption?.name || 'None'}
           <input
-            autocomplete="off"
+            autoComplete="off"
             name="gamename"
             id="auto"
             placeholder="Type to search"
@@ -82,22 +83,8 @@ const Suggestions = styled.div`
   padding: 10px;
   gap: 10px;
   color: whitesmoke;
-`
 
-// const List = styled.ul`
-//   display: grid;
-//   justify-items: center;
-//   padding: 0;
-//   list-style: none;
-//   gap: 20px;
-//   font-size: 1.8rem;
-//   li {
-//     padding: 20px;
-//     border-radius: 8px;
-//     color: whitesmoke;
-//     width: 300px;
-//     text-align: center;
-//     border: ridge whitesmoke;
-//     background-color: #4056a1;
-//   }
-// `
+  span {
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  }
+`
