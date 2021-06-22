@@ -50,6 +50,9 @@ export default function Search({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault()
     onSubmit(selectedOption)
+    setSelectedOption(null)
+    event.target.elements.gamename.value = ''
+    setOptions([])
   }
 }
 
@@ -83,8 +86,4 @@ const Suggestions = styled.div`
   padding: 10px;
   gap: 10px;
   color: whitesmoke;
-
-  span {
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  }
 `
