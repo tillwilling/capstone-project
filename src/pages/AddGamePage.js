@@ -33,11 +33,6 @@ const List = styled.ul`
   list-style: none;
   gap: 20px;
   font-size: 1.8rem;
-
-  img {
-    max-width: 250px;
-    border-radius: 8px;
-  }
 `
 
 const ListItem = styled.li`

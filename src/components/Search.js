@@ -24,7 +24,7 @@ export default function Search({ onSubmit }) {
             autoComplete="off"
             name="gamename"
             id="auto"
-            placeholder="Type to search a game"
+            placeholder="Type, to search a game"
             value={selectedOption?.name}
             onChange={event => setQuery(event.target.value)}
           />
@@ -73,11 +73,12 @@ const Form = styled.form`
   }
 
   input {
-    padding: 10px;
-    border-radius: 25px;
+    padding: 12px;
+    border-radius: 28px;
     border-style: none;
     background-color: whitesmoke;
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 6px rgba(0, 0, 0, 0.3);
     margin-top: 30px;
   }
 

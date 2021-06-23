@@ -12,7 +12,8 @@ const Button = styled.button`
   font-size: 1.5rem;
   position: fixed;
   bottom: 0;
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 6px rgba(0, 0, 0, 0.3);
 `
 
 export default Button
