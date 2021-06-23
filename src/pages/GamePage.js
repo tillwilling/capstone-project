@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro'
 import React from 'react'
-import { deepEqual } from 'assert'
 import Button from '../components/Button'
 
 const GamesArr = [

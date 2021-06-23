@@ -7,4 +7,6 @@ export default {
 const Template = args => <AddGamePage {...args} />
 
 export const Default = Template.bind({})
-Default.args = { games: ['Apex Legends', 'DOTA 2', 'Among Us'] }
+Default.args = {
+  games: [{ name: 'Apex Legends' }, { name: 'DOTA 2' }, { name: 'Among Us' }],
+}

@@ -7,11 +7,7 @@ function App() {
   useEffect(() => {
     setLocalStorage('games', games)
   }, [games])
-  return (
-    <div>
-      <AddGamePage games={games} onSubmit={handleSelected} />
-    </div>
-  )
+  return <AddGamePage games={games} onSubmit={handleSelected} />
 
   function handleSelected(selectedGame) {
     setGames([...games, selectedGame])
