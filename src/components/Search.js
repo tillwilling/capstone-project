@@ -33,13 +33,11 @@ export default function Search({ onSubmit }) {
       </Form>
       <Suggestions>
         {query &&
-          options.map(option => {
-            return (
-              <div onClick={() => setSelectedOption(option)} key={option.id}>
-                <span>{option.name}</span>
-              </div>
-            )
-          })}
+          options.map(option => (
+            <div onClick={() => setSelectedOption(option)} key={option.id}>
+              <span>{option.name}</span>
+            </div>
+          ))}
       </Suggestions>
     </>
   )

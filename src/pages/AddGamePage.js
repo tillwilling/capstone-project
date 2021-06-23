@@ -7,12 +7,12 @@ export default function AddGamePage({ onSubmit, games }) {
       <Search onSubmit={onSubmit} />
       <List>
         {games.map(game => (
-          <ListItem backgroundImage={game.background_image}>
+          <ListItem backgroundImage={game.background_image} key={game.id}>
             {game.name}
           </ListItem>
         ))}
       </List>
-      <BottomSpacer></BottomSpacer>
+      <BottomSpacer />
     </Container>
   )
 }
