@@ -2,7 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import GlobalStyles from 'styled-components'
+import GlobalStyles from './GlobalStyles'
+
+//require('dotenv').config()
 
 ReactDOM.render(
   <React.StrictMode>

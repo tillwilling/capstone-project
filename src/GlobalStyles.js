@@ -2,14 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 
-:root {
-
-}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  background-color: #1A1A1D;
 }
 body {
   font-family: sans-serif;
