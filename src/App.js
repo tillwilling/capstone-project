@@ -7,7 +7,17 @@ function App() {
   useEffect(() => {
     setLocalStorage('games', games)
   }, [games])
-  return <AddGamePage games={games} onSubmit={handleSelected} />
+  return (
+    <AddGamePage
+      games={games}
+      onSubmit={handleSelected}
+      onRemove={handleRemove}
+    />
+  )
+
+  function handleRemove(id) {
+    setGames(games.filter(game => game.id !== id))
+  }
 
   function handleSelected(selectedGame) {
     setGames([...games, selectedGame])

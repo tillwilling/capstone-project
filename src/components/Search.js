@@ -8,6 +8,7 @@ export default function Search({ onSubmit }) {
   const [options, setOptions] = useState([])
   const [query, setQuery] = useState('')
   const [selectedOption, setSelectedOption] = useState(null)
+
   useEffect(() => {
     setSelectedOption(null)
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}&search=${query}`)
@@ -15,11 +16,12 @@ export default function Search({ onSubmit }) {
       .then(data => setOptions(data.results))
       .catch(error => console.error(error))
   }, [query])
+
   return (
     <>
       <Form onSubmit={handleSubmit}>
         <label>
-          {/* Selected Game: {selectedOption?.name || 'None'} */}
+          Type, to search a game
           <input
             autoComplete="off"
             name="gamename"
@@ -27,18 +29,19 @@ export default function Search({ onSubmit }) {
             placeholder="Type, to search a game"
             value={selectedOption?.name}
             onChange={event => setQuery(event.target.value)}
+            required
           />
         </label>
         <Button>Add game</Button>
+        <Suggestions>
+          {query &&
+            options.map(option => (
+              <div onClick={() => setSelectedOption(option)} key={option.id}>
+                <span>{option.name}</span>
+              </div>
+            ))}
+        </Suggestions>
       </Form>
-      <Suggestions>
-        {query &&
-          options.map(option => (
-            <div onClick={() => setSelectedOption(option)} key={option.id}>
-              <span>{option.name}</span>
-            </div>
-          ))}
-      </Suggestions>
     </>
   )
   function handleSubmit(event) {
@@ -53,7 +56,6 @@ export default function Search({ onSubmit }) {
 const Form = styled.form`
   display: grid;
   justify-items: center;
-  gap: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -65,9 +67,8 @@ const Form = styled.form`
     display: grid;
     font-size: 1.4rem;
     line-height: 1.4;
-    color: #c3073f;
+    color: transparent; /*only for screen readers*/
     background: transparent;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
   }
 
   input {
@@ -77,7 +78,7 @@ const Form = styled.form`
     background-color: whitesmoke;
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
       5px 5px 15px 6px rgba(0, 0, 0, 0.3);
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   input::placeholder {
@@ -86,10 +87,14 @@ const Form = styled.form`
 `
 
 const Suggestions = styled.div`
+  font-size: 1.3rem;
   display: grid;
   justify-items: center;
-  padding: 10px;
-  gap: 10px;
+  gap: 20px;
   color: whitesmoke;
-  margin-top: 80px;
+  opacity: 0.9;
+  height: 48%;
+  backdrop-filter: blur(0.5rem);
+  overflow-y: scroll;
+  margin-top: 20px;
 `

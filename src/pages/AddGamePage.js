@@ -1,14 +1,15 @@
 import styled from 'styled-components/macro'
+import RemoveButton from '../components/RemoveButton'
 import Search from '../components/Search'
 
-export default function AddGamePage({ onSubmit, games }) {
+export default function AddGamePage({ onSubmit, games, onRemove }) {
   return (
     <Container>
       <Search onSubmit={onSubmit} />
       <List>
         {games.map(game => (
           <ListItem backgroundImage={game.background_image} key={game.id}>
-            {game.name}
+            {game.name} <RemoveButton onRemove={onRemove} id={game.id} />
           </ListItem>
         ))}
       </List>
@@ -33,6 +34,7 @@ const List = styled.ul`
   list-style: none;
   gap: 20px;
   font-size: 1.8rem;
+  margin-top: 113px;
 `
 
 const ListItem = styled.li`
