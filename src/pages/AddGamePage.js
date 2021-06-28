@@ -2,13 +2,27 @@ import styled from 'styled-components/macro'
 import RemoveButton from '../components/RemoveButton'
 import Search from '../components/Search'
 
-export default function AddGamePage({ onSubmit, games, onRemove }) {
+import Logo from '../images/logo.png'
+
+export default function AddGamePage({
+  onSubmit,
+  games,
+  onRemove,
+  handleShowDetails,
+}) {
   return (
     <Container>
+      <LogoContainer>
+        <img src={Logo} alt="" />
+      </LogoContainer>
       <Search onSubmit={onSubmit} />
       <List>
         {games.map(game => (
-          <ListItem backgroundImage={game.background_image} key={game.id}>
+          <ListItem
+            backgroundImage={game.background_image}
+            key={game.id}
+            onClick={() => handleShowDetails(game)}
+          >
             {game.name} <RemoveButton onRemove={onRemove} id={game.id} />
           </ListItem>
         ))}
@@ -17,6 +31,19 @@ export default function AddGamePage({ onSubmit, games, onRemove }) {
     </Container>
   )
 }
+
+const LogoContainer = styled.div`
+  display: grid;
+  justify-items: center;
+  margin-top: -24px;
+
+  img {
+    max-width: 118px;
+    padding: 5px;
+    position: fixed;
+    background: transparent;
+  }
+`
 
 const Container = styled.section`
   display: grid;
@@ -35,6 +62,7 @@ const List = styled.ul`
   gap: 20px;
   font-size: 1.8rem;
   margin-top: 113px;
+  z-index: 1;
 `
 
 const ListItem = styled.li`

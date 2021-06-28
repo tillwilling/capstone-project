@@ -62,6 +62,7 @@ const Form = styled.form`
   width: 100%;
   margin: 0 auto;
   background: transparent;
+  z-index: 2;
 
   label {
     display: grid;
