@@ -1,13 +1,43 @@
 import styled from 'styled-components/macro'
 
-export default function GameDetails({ game }) {
+export default function GameDetails({ game, platform }) {
   console.log(game)
   return (
     <DetailsWrapper>
       <Cover>
         <img src={game.background_image} alt="" />
-        <h1>{game.name}</h1>
+        <p>Released: {game.released}</p>
+        <h2>{game.name}</h2>
       </Cover>
+
+      <StoresWrapper>
+        <h4>Available on:</h4>
+        <Stores>
+          {game.stores.map(store => (
+            <SingleStore key={store.store.id}>{store.store.name}</SingleStore>
+          ))}
+        </Stores>
+      </StoresWrapper>
+
+      <PlatformsWrapper>
+        <h4>Platforms:</h4>
+        <Platforms>
+          {game.platforms.map(platform => (
+            <SinglePlatform key={platform.platform.id}>
+              {platform.platform.name}
+            </SinglePlatform>
+          ))}
+        </Platforms>
+      </PlatformsWrapper>
+
+      <GenresWrapper>
+        <h4>Genre:</h4>
+        <Genres>
+          {game.genres.map(genre => (
+            <SingleGenre key={genre.id}>{genre.name}</SingleGenre>
+          ))}
+        </Genres>
+      </GenresWrapper>
 
       <Screenshots>
         {game.short_screenshots.map(screenshot => (
@@ -25,6 +55,21 @@ const DetailsWrapper = styled.div`
   display: grid;
 `
 
+const StoresWrapper = styled.div`
+  padding: 8px;
+  color: #ffe400;
+`
+
+const PlatformsWrapper = styled.div`
+  padding: 8px;
+  color: #ffe400;
+`
+
+const GenresWrapper = styled.div`
+  padding: 8px;
+  color: #ffe400;
+`
+
 const Cover = styled.div`
   display: grid;
   align-items: center;
@@ -34,21 +79,54 @@ const Cover = styled.div`
     max-width: 100vw;
   }
 
-  h1 {
-    border-top: 1px whitesmoke ridge;
-    border-bottom: 1px whitesmoke ridge;
-    padding: 8px;
+  p {
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    color: whitesmoke;
+    font-size: 0.8rem;
+  }
+
+  h2 {
+    border-top: 1px whitesmoke dotted;
+    border-bottom: 1px whitesmoke dotted;
+    padding: 5px;
     color: #e0dfdc;
     background: #c3073f;
     letter-spacing: 0.1em;
-    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
-      0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
-      0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c,
-      0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414,
-      0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
   }
 `
+
+const Stores = styled.ul`
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  list-style: none;
+  color: whitesmoke;
+`
+
+const SingleStore = styled.li``
+
+const Platforms = styled.ul`
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  list-style: none;
+  color: whitesmoke;
+`
+
+const SinglePlatform = styled.li``
+
+const Genres = styled.ul`
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  list-style: none;
+  color: whitesmoke;
+`
+
+const SingleGenre = styled.li``
 
 const Screenshots = styled.ul`
   width: 100%;
@@ -57,7 +135,6 @@ const Screenshots = styled.ul`
   list-style: none;
   gap: 20px;
   font-size: 1.8rem;
-  margin-top: 50px;
   overflow-x: scroll;
 `
 

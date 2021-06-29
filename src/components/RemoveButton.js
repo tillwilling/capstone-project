@@ -17,7 +17,7 @@ const Button = styled.button`
   background-color: #c3073f;
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 3px rgba(0, 0, 0, 0);
   img {
-    width: 25px;
+    width: 23px;
     background-color: transparent;
   }
 `
