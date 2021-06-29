@@ -1,4 +1,4 @@
-This is my capstone-project "Game On".
+This is my capstone-project "Game On". A mobile-app for video games.
 
 You can make a list of games you like. The search bar got autocompletion and is connected to one of the biggest video-game-database "RAWG".
 
