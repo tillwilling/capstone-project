@@ -40,6 +40,7 @@ function App() {
   }
 
   function handleSelected(selectedGame) {
+    console.log(selectedGame)
     setGames([...games, selectedGame])
   }
 }

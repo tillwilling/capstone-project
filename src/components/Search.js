@@ -8,7 +8,7 @@ export default function Search({ onSubmit }) {
   const [options, setOptions] = useState([])
   const [query, setQuery] = useState('')
   const [selectedOption, setSelectedOption] = useState(null)
-
+  const [detailedGame, setDetailedGame] = useState(null)
   useEffect(() => {
     setSelectedOption(null)
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}&search=${query}`)
@@ -16,7 +16,13 @@ export default function Search({ onSubmit }) {
       .then(data => setOptions(data.results))
       .catch(error => console.error(error))
   }, [query])
-
+  useEffect(() => {
+    selectedOption &&
+      fetch(`https://api.rawg.io/api/games/${selectedOption.id}?key=${API_KEY}`)
+        .then(res => res.json())
+        .then(data => setDetailedGame(data))
+        .catch(error => console.error(error))
+  }, [selectedOption])
   return (
     <>
       <Form onSubmit={handleSubmit}>
@@ -46,8 +52,8 @@ export default function Search({ onSubmit }) {
   )
   function handleSubmit(event) {
     event.preventDefault()
-    onSubmit(selectedOption)
-    setSelectedOption(null)
+    onSubmit(detailedGame)
+    setDetailedGame(null)
     event.target.elements.gamename.value = ''
     setOptions([])
   }

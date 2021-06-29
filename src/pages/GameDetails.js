@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import DOMpurify from 'dompurify'
 
 export default function GameDetails({ game, platform }) {
   console.log(game)
@@ -40,14 +41,23 @@ export default function GameDetails({ game, platform }) {
         </Genres>
       </GenresWrapper>
 
-      <Screenshots>
-        {game.short_screenshots.map(screenshot => (
+      <DescriptionWrapper>
+        <h4>About:</h4>
+        <Description
+          dangerouslySetInnerHTML={{
+            __html: DOMpurify.sanitize(game.description),
+          }}
+        />
+      </DescriptionWrapper>
+
+      {/* <Screenshots>
+        {game.screenshots.map(screenshot => (
           <SingleScreenshot
             backgroundImage={screenshot.image}
             key={screenshot.id}
           ></SingleScreenshot>
         ))}
-      </Screenshots>
+      </Screenshots> */}
     </DetailsWrapper>
   )
 }
@@ -72,6 +82,11 @@ const GenresWrapper = styled.div`
   color: #ffe400;
 `
 
+const DescriptionWrapper = styled.div`
+  padding: 8px;
+  color: #ffe400;
+`
+
 const Cover = styled.div`
   display: grid;
   align-items: center;
@@ -82,11 +97,12 @@ const Cover = styled.div`
   }
 
   p {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background: transparent;
-    color: whitesmoke;
+    color: green;
     font-size: 0.8rem;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
   }
 
   h2 {
@@ -132,6 +148,15 @@ const Genres = styled.ul`
 `
 
 const SingleGenre = styled.li``
+
+const Description = styled.p`
+  font-size: 1rem;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  list-style: none;
+  color: whitesmoke;
+`
 
 const Screenshots = styled.ul`
   margin: 0 10px 0 10px;
