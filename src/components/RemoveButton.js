@@ -3,7 +3,12 @@ import TrashIcon from '../images/trash_icon.png'
 
 export default function RemoveButton({ onRemove, id }) {
   return (
-    <Button onClick={() => onRemove(id)}>
+    <Button
+      onClick={event => {
+        event.stopPropagation()
+        onRemove(id)
+      }}
+    >
       <img src={TrashIcon} alt="" />
     </Button>
   )

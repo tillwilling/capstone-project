@@ -13,9 +13,10 @@ export default function GameDetails({ game, platform }) {
       <StoresWrapper>
         <h4>Available on:</h4>
         <Stores>
-          {game.stores.map(store => (
-            <SingleStore key={store.store.id}>{store.store.name}</SingleStore>
-          ))}
+          {game.stores &&
+            game.stores.map(store => (
+              <SingleStore key={store.store.id}>{store.store.name}</SingleStore>
+            ))}
         </Stores>
       </StoresWrapper>
 
@@ -56,6 +57,7 @@ const DetailsWrapper = styled.div`
 `
 
 const StoresWrapper = styled.div`
+  margin-top: 4px;
   padding: 8px;
   color: #ffe400;
 `
@@ -99,6 +101,7 @@ const Cover = styled.div`
 `
 
 const Stores = styled.ul`
+  font-size: 1rem;
   display: flex;
   gap: 10px;
   padding: 10px;
@@ -109,7 +112,8 @@ const Stores = styled.ul`
 const SingleStore = styled.li``
 
 const Platforms = styled.ul`
-  display: flex;
+  font-size: 1rem;
+  flex-wrap: auto;
   gap: 10px;
   padding: 10px;
   list-style: none;
@@ -119,6 +123,7 @@ const Platforms = styled.ul`
 const SinglePlatform = styled.li``
 
 const Genres = styled.ul`
+  font-size: 1rem;
   display: flex;
   gap: 10px;
   padding: 10px;
@@ -129,6 +134,7 @@ const Genres = styled.ul`
 const SingleGenre = styled.li``
 
 const Screenshots = styled.ul`
+  margin: 0 10px 0 10px;
   width: 100%;
   display: flexbox;
   padding: 0;
