@@ -20,7 +20,7 @@ export default function Search({ onSubmit }) {
     selectedOption &&
       fetch(`https://api.rawg.io/api/games/${selectedOption.id}?key=${API_KEY}`)
         .then(res => res.json())
-        .then(data => setDetailedGame(data))
+        .then(data => setDetailedGame({ ...selectedOption, ...data }))
         .catch(error => console.error(error))
   }, [selectedOption])
   return (

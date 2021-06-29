@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro'
 import DOMpurify from 'dompurify'
 
-export default function GameDetails({ game, platform }) {
+export default function GameDetails({ game }) {
   console.log(game)
   return (
     <DetailsWrapper>
       <Cover>
         <img src={game.background_image} alt="" />
-        <p>Released: {game.released}</p>
+        <p>Game release date: {game.released}</p>
         <h2>{game.name}</h2>
       </Cover>
 
@@ -41,6 +41,15 @@ export default function GameDetails({ game, platform }) {
         </Genres>
       </GenresWrapper>
 
+      <Screenshots>
+        {game.short_screenshots.map(screenshot => (
+          <SingleScreenshot
+            backgroundImage={screenshot.image}
+            key={screenshot.id}
+          ></SingleScreenshot>
+        ))}
+      </Screenshots>
+
       <DescriptionWrapper>
         <h4>About:</h4>
         <Description
@@ -49,15 +58,6 @@ export default function GameDetails({ game, platform }) {
           }}
         />
       </DescriptionWrapper>
-
-      {/* <Screenshots>
-        {game.screenshots.map(screenshot => (
-          <SingleScreenshot
-            backgroundImage={screenshot.image}
-            key={screenshot.id}
-          ></SingleScreenshot>
-        ))}
-      </Screenshots> */}
     </DetailsWrapper>
   )
 }
@@ -99,6 +99,8 @@ const Cover = styled.div`
   p {
     position: fixed;
     bottom: 0;
+    right: 0;
+    margin-right: 15px;
     background: transparent;
     color: green;
     font-size: 0.8rem;
@@ -129,7 +131,6 @@ const SingleStore = styled.li``
 
 const Platforms = styled.ul`
   font-size: 1rem;
-  flex-wrap: auto;
   gap: 10px;
   padding: 10px;
   list-style: none;
