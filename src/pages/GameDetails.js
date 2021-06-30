@@ -1,10 +1,16 @@
 import styled from 'styled-components/macro'
 import DOMpurify from 'dompurify'
+import { Link } from 'react-router-dom'
+import SpaceInvader from '../images/space_invader1.png'
 
 export default function GameDetails({ game }) {
   console.log(game)
   return (
     <DetailsWrapper>
+      <StyledLink to="/">
+        <img src={SpaceInvader} alt="" />
+        go back
+      </StyledLink>
       <Cover>
         <img src={game.background_image} alt="" />
         <p>Game release date: {game.released}</p>
@@ -12,7 +18,10 @@ export default function GameDetails({ game }) {
       </Cover>
 
       <WebsiteWrapper>
-        <a href={game.website}>{game.name} Website</a>
+        <a href={game.website} target="_blank" rel="noreferrer">
+          {/* {game.name} */}
+          visit website
+        </a>
       </WebsiteWrapper>
 
       <StoresWrapper>
@@ -66,12 +75,43 @@ export default function GameDetails({ game }) {
   )
 }
 
+const StyledLink = styled(Link)`
+  display: grid;
+  position: fixed;
+  justify-items: center;
+  padding: 5px;
+  margin: 20px;
+  background: #00ff00;
+  width: 40px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #c3073f;
+  font-weight: bold;
+  box-shadow: 2px 5px 16px 0px #1a1a1d, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+  img {
+    max-width: 25px;
+    background: transparent;
+  }
+`
+
 const WebsiteWrapper = styled.div`
   display: grid;
   justify-content: center;
 
   a {
-    margin-top: 10px;
+    text-decoration: none;
+    color: #1a1a1d;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 6px 15px 6px 15px;
+    margin: 10px 10px 0 0;
+    background: #00ff00;
+    border-radius: 15px;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 6px rgba(0, 0, 0, 0.3);
   }
 `
 

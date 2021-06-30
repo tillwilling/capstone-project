@@ -5,8 +5,6 @@ import reportWebVitals from './reportWebVitals'
 import GlobalStyles from './GlobalStyles'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-//require('dotenv').config()
-
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />

@@ -9,6 +9,7 @@ export default function Search({ onSubmit }) {
   const [query, setQuery] = useState('')
   const [selectedOption, setSelectedOption] = useState(null)
   const [detailedGame, setDetailedGame] = useState(null)
+  const [isSelected, setIsSelected] = useState(false)
   useEffect(() => {
     setSelectedOption(null)
     fetch(`https://api.rawg.io/api/games?key=${API_KEY}&search=${query}`)
@@ -22,13 +23,21 @@ export default function Search({ onSubmit }) {
         .then(res => res.json())
         .then(data => setDetailedGame({ ...selectedOption, ...data }))
         .catch(error => console.error(error))
+
+    // fetch(
+    //   `https://api.rawg.io/api/games/${selectedOption.id}/movies?key=${API_KEY}`
+    // )
+    //   .then(res => res.json())
+    //   .then(data => console.log(data))
+    //   .catch(error => console.error(error))
   }, [selectedOption])
+
   return (
     <>
       <Form onSubmit={handleSubmit}>
         <label>
           Type, to search a game
-          <input
+          <Input
             autoComplete="off"
             name="gamename"
             id="auto"
@@ -36,13 +45,14 @@ export default function Search({ onSubmit }) {
             value={selectedOption?.name}
             onChange={event => setQuery(event.target.value)}
             required
+            isSelected={isSelected}
           />
         </label>
         <Button>Add game</Button>
         <Suggestions>
           {query &&
             options.map(option => (
-              <div onClick={() => setSelectedOption(option)} key={option.id}>
+              <div onClick={() => handleClickOption(option)} key={option.id}>
                 <span>{option.name}</span>
               </div>
             ))}
@@ -50,14 +60,20 @@ export default function Search({ onSubmit }) {
       </Form>
     </>
   )
+
+  function handleClickOption(option) {
+    setSelectedOption(option)
+    setIsSelected(true)
+    setQuery(false)
+  }
+
   function handleSubmit(event) {
     event.preventDefault()
     onSubmit(detailedGame)
     setDetailedGame(null)
-    // const form = event.target
-    // form.reset()
     event.target.elements.gamename.value = ''
     setOptions([])
+    setIsSelected(false)
   }
 }
 
@@ -69,7 +85,6 @@ const Form = styled.form`
   left: 0;
   width: 100%;
   margin: 0 auto;
-  /* background: transparent; */
   z-index: 2;
 
   label {
@@ -79,18 +94,19 @@ const Form = styled.form`
     color: transparent; /*only for screen readers*/
     background: transparent;
   }
+`
 
-  input {
-    padding: 12px;
-    border-radius: 28px;
-    border-style: none;
-    background-color: whitesmoke;
-    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-      5px 5px 15px 6px rgba(0, 0, 0, 0.3);
-    margin-top: 30px;
-  }
+const Input = styled.input`
+  padding: 12px;
+  border-radius: 28px;
+  border-style: none;
+  background-color: whitesmoke;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 6px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  border: ${props => (props.isSelected ? ' 2px dashed #00ff00' : 'none')};
 
-  input::placeholder {
+  ::placeholder {
     opacity: 0.5;
     text-align: center;
   }
