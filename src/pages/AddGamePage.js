@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import RemoveButton from '../components/RemoveButton'
 import Search from '../components/Search'
+import '@fontsource/play'
 
 import Logo from '../images/logo.png'
 
@@ -60,7 +61,8 @@ const List = styled.ul`
   justify-items: center;
   list-style: none;
   gap: 20px;
-  font-size: 1.2rem;
+  font-family: 'Play';
+  font-size: 1.4rem;
   margin-top: 130px;
   z-index: 1;
 `

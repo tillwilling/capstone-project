@@ -2,6 +2,7 @@ import styled from 'styled-components/macro'
 import DOMpurify from 'dompurify'
 import { Link } from 'react-router-dom'
 import SpaceInvader from '../images/space_invader1.png'
+import '@fontsource/play'
 
 export default function GameDetails({ game }) {
   console.log(game)
@@ -84,6 +85,7 @@ const StyledLink = styled(Link)`
   background: #00ff00;
   width: 40px;
   border-radius: 4px;
+  font-family: 'Play';
   text-align: center;
   font-size: 0.8rem;
   text-decoration: none;
@@ -103,12 +105,13 @@ const WebsiteWrapper = styled.div`
 
   a {
     text-decoration: none;
-    color: #1a1a1d;
+    color: #4e4e50;
+    font-family: 'Play';
     font-size: 0.9rem;
     font-weight: bold;
-    padding: 6px 15px 6px 15px;
+    padding: 6px 20px 6px 20px;
     margin: 10px 10px 0 0;
-    background: #00ff00;
+    background: whitesmoke;
     border-radius: 15px;
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
       5px 5px 15px 6px rgba(0, 0, 0, 0.3);
@@ -120,22 +123,26 @@ const DetailsWrapper = styled.div`
 `
 
 const StoresWrapper = styled.div`
+  font-family: 'Play';
   margin-top: 4px;
   padding: 8px;
   color: #ffe400;
 `
 
 const PlatformsWrapper = styled.div`
+  font-family: 'Play';
   padding: 8px;
   color: #ffe400;
 `
 
 const GenresWrapper = styled.div`
+  font-family: 'Play';
   padding: 8px;
   color: #ffe400;
 `
 
 const DescriptionWrapper = styled.div`
+  font-family: 'Play';
   padding: 8px;
   color: #ffe400;
 `
@@ -153,14 +160,16 @@ const Cover = styled.div`
     position: fixed;
     bottom: 0;
     right: 0;
-    margin-right: 15px;
+    margin-right: 20px;
     background: transparent;
     color: green;
+    font-family: 'Play';
     font-size: 0.8rem;
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
   }
 
   h2 {
+    font-family: 'Play';
     border-top: 1px whitesmoke dotted;
     border-bottom: 1px whitesmoke dotted;
     padding: 5px;
