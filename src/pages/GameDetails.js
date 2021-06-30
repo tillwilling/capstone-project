@@ -186,6 +186,7 @@ const Stores = styled.ul`
   padding: 10px;
   list-style: none;
   color: whitesmoke;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
 `
 
 const SingleStore = styled.li``
@@ -196,6 +197,7 @@ const Platforms = styled.ul`
   padding: 10px;
   list-style: none;
   color: whitesmoke;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
 `
 
 const SinglePlatform = styled.li``
@@ -207,6 +209,7 @@ const Genres = styled.ul`
   padding: 10px;
   list-style: none;
   color: whitesmoke;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
 `
 
 const SingleGenre = styled.li``
