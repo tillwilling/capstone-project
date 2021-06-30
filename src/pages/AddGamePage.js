@@ -53,7 +53,7 @@ const Container = styled.section`
 `
 
 const BottomSpacer = styled.div`
-  height: 110px;
+  height: 120px;
 `
 
 const List = styled.ul`
@@ -68,6 +68,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
+  cursor: pointer;
   padding: 10px 10px 10px 0;
   border-radius: 8px;
   color: whitesmoke;

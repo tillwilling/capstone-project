@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 
 const Button = styled.button`
+  cursor: pointer;
   border-radius: 8px;
   border-style: none;
   padding: 20px;

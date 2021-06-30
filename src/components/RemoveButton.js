@@ -15,6 +15,7 @@ export default function RemoveButton({ onRemove, id }) {
 }
 
 const Button = styled.button`
+  cursor: pointer;
   position: relative;
   top: 105px;
   margin-left: 0;

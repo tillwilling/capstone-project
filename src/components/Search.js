@@ -108,11 +108,13 @@ const Input = styled.input`
 
   ::placeholder {
     opacity: 0.5;
+    font-family: 'Play';
     text-align: center;
   }
 `
 
 const Suggestions = styled.div`
+  cursor: pointer;
   font-size: 1.3rem;
   display: grid;
   justify-items: center;
