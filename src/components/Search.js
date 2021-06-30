@@ -54,6 +54,8 @@ export default function Search({ onSubmit }) {
     event.preventDefault()
     onSubmit(detailedGame)
     setDetailedGame(null)
+    // const form = event.target
+    // form.reset()
     event.target.elements.gamename.value = ''
     setOptions([])
   }
@@ -67,7 +69,7 @@ const Form = styled.form`
   left: 0;
   width: 100%;
   margin: 0 auto;
-  background: transparent;
+  /* background: transparent; */
   z-index: 2;
 
   label {
@@ -85,11 +87,12 @@ const Form = styled.form`
     background-color: whitesmoke;
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
       5px 5px 15px 6px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   input::placeholder {
     opacity: 0.5;
+    text-align: center;
   }
 `
 
@@ -103,5 +106,5 @@ const Suggestions = styled.div`
   height: 48%;
   backdrop-filter: blur(0.5rem);
   overflow-y: scroll;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 `

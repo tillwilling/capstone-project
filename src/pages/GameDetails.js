@@ -11,6 +11,10 @@ export default function GameDetails({ game }) {
         <h2>{game.name}</h2>
       </Cover>
 
+      <WebsiteWrapper>
+        <a href={game.website}>{game.name} Website</a>
+      </WebsiteWrapper>
+
       <StoresWrapper>
         <h4>Available on:</h4>
         <Stores>
@@ -61,6 +65,15 @@ export default function GameDetails({ game }) {
     </DetailsWrapper>
   )
 }
+
+const WebsiteWrapper = styled.div`
+  display: grid;
+  justify-content: center;
+
+  a {
+    margin-top: 10px;
+  }
+`
 
 const DetailsWrapper = styled.div`
   display: grid;
@@ -120,7 +133,6 @@ const Cover = styled.div`
 
 const Stores = styled.ul`
   font-size: 1rem;
-  display: flex;
   gap: 10px;
   padding: 10px;
   list-style: none;
@@ -152,7 +164,7 @@ const SingleGenre = styled.li``
 
 const Description = styled.p`
   font-size: 1rem;
-  display: flex;
+  display: grid;
   gap: 10px;
   padding: 10px;
   list-style: none;

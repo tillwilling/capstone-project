@@ -35,13 +35,14 @@ export default function AddGamePage({
 const LogoContainer = styled.div`
   display: grid;
   justify-items: center;
-  margin-top: -24px;
+  margin-top: -2px;
 
   img {
-    max-width: 118px;
+    max-width: 150px;
     padding: 5px;
     position: fixed;
     background: transparent;
+    z-index: 5;
   }
 `
 
@@ -57,23 +58,21 @@ const BottomSpacer = styled.div`
 const List = styled.ul`
   display: grid;
   justify-items: center;
-  padding: 0;
   list-style: none;
   gap: 20px;
-  font-size: 1.8rem;
-  margin-top: 113px;
+  font-size: 1.2rem;
+  margin-top: 130px;
   z-index: 1;
 `
 
 const ListItem = styled.li`
-  padding: 20px;
+  padding: 10px 10px 10px 0;
   border-radius: 8px;
   color: whitesmoke;
   width: 300px;
-  height: 150px;
+  height: 159px;
   text-align: center;
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 1);
-  border: ridge whitesmoke;
   background-image: url(${props => props.backgroundImage});
   background-size: 300px;
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
