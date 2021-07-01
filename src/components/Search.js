@@ -28,7 +28,7 @@ export default function Search({ onSubmit }) {
     //   `https://api.rawg.io/api/games/${selectedOption.id}/movies?key=${API_KEY}`
     // )
     //   .then(res => res.json())
-    //   .then(data => console.log(data))
+    //   .then(data => setDetailedGame({ ...selectedOption, ...data, ...videos }))
     //   .catch(error => console.error(error))
   }, [selectedOption])
 
@@ -93,6 +93,13 @@ const Form = styled.form`
     line-height: 1.4;
     color: transparent; /*only for screen readers*/
     background: transparent;
+  }
+
+  ${Button} {
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    margin: 0 0 20px;
   }
 `
 

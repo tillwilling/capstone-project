@@ -42,6 +42,9 @@ const LogoContainer = styled.div`
     max-width: 150px;
     padding: 5px;
     position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    right: 50%;
     background: transparent;
     z-index: 5;
   }
