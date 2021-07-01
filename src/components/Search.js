@@ -111,7 +111,7 @@ const Input = styled.input`
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     5px 5px 15px 6px rgba(0, 0, 0, 0.3);
   margin-top: 30px;
-  border: ${props => (props.isSelected ? ' 2px dashed #00ff00' : 'none')};
+  border: ${props => (props.isSelected ? ' 3px solid #00ff00' : 'none')};
 
   ::placeholder {
     opacity: 0.5;
