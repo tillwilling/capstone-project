@@ -227,7 +227,7 @@ const Screenshots = styled.ul`
   margin: 0 10px 0 10px;
   width: 100%;
   display: flexbox;
-  padding: 0;
+  padding: 5;
   list-style: none;
   gap: 20px;
   font-size: 1.8rem;
