@@ -36,10 +36,9 @@ export default function AddGamePage({
 const LogoContainer = styled.div`
   display: grid;
   justify-items: center;
-  margin-top: -2px;
 
   img {
-    max-width: 150px;
+    max-width: 140px;
     padding: 5px;
     position: fixed;
     transform: translateX(-50%);

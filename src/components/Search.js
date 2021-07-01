@@ -105,6 +105,7 @@ const Form = styled.form`
 
 const Input = styled.input`
   padding: 12px;
+  width: 337px;
   border-radius: 28px;
   border-style: none;
   background-color: whitesmoke;
