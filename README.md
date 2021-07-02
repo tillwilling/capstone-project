@@ -6,7 +6,8 @@
 ---
 
 This is my capstone-project "Game On". A mobile-app for video games.
-![game_on](https://user-images.githubusercontent.com/82399378/124258409-a6009780-db2d-11eb-8e2b-a9698477cb11.jpg)
+![game_on](https://user-images.githubusercontent.com/82399378/124258742-07c10180-db2e-11eb-88f2-976d9e6c6769.jpg)
+
 
 
 
