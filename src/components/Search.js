@@ -41,7 +41,7 @@ export default function Search({ onSubmit }) {
             autoComplete="off"
             name="gamename"
             id="auto"
-            placeholder="Type, to search a game"
+            placeholder="Type to search a game"
             value={selectedOption?.name}
             onChange={event => setQuery(event.target.value)}
             required
