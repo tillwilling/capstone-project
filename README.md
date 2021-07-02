@@ -1,6 +1,9 @@
+<div align="center">
+  <img src="./src/images/logo.png"
+     height="40px"/>
+</div>
 
-![logo](https://user-images.githubusercontent.com/82399378/124252248-0b04bf00-db27-11eb-8d79-1e2978a7908c.png)
-
+---
 
 This is my capstone-project "Game On". A mobile-app for video games.
 
