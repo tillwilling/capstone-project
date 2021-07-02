@@ -36,7 +36,7 @@ export default function Search({ onSubmit }) {
     <>
       <Form onSubmit={handleSubmit}>
         <label>
-          Type, to search a game
+          Type to search a game
           <Input
             autoComplete="off"
             name="gamename"
