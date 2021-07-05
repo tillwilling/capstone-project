@@ -21,6 +21,7 @@
 - React Router
 - external API (RAWG)
 - localStorage
+- Vercel
   
   ---
 
