@@ -1,6 +1,7 @@
 <div align="center">
   <img src="./src/images/logo.png"
      height="80px"/>
+     <p>Mobile-App</p>
 
 
 ---
